@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --background: #09090a;
+
+  --white: #ffffff;
+  --white-600: #f0f0f0;
+  --white-400: #ededed;
+
+  --grey-300: #c6c6d3;
+  --grey-400: #a1a1aa;
+
+  --dark-400: #27272a;
+  --dark-500: #3e3e41;
+  --dark-600: #1c1c1c;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: var(--background);
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input, textarea, button{
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+
+}
+
+h1, h2, h3, h4, h5, h6, strong{
+  font-weight: 600;
+  color: #ffffff;
+}
+
+button{
+  cursor: pointer;
+}
+
+
+
+
+
+
