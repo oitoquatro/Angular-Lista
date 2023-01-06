@@ -1,6 +1,6 @@
 <div class="container-home">
   <div class="content-home">
-    <h1>Lista de alunos</h1>
+    <h1>Lista de alunos do curso de Angular</h1>
     <div class="filter-form">
       <div>
         <label htmlfor="nome">Pesquisar</label>
@@ -14,24 +14,30 @@
       </div>
     </div>
     <table class="table-content">
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>Sexo</th>
-          <th>Nacionalidade</th>
-          <th>Ação</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Junior</td>
-          <td>Masculino</td>
-          <td>Brasileiro</td>
-          <td>
-            <button>Visualizar</button>
-          </td>
-        </tr>
-      </tbody>
+      <ng-container *ngIf="!error">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Sexo</th>
+            <th>Nacionalidade</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of dataUser">
+            <td>{{user.name.first}} {{user.name.last}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.nat}}</td>
+            <td>
+              <button (click)="openModal(user)">Visualizar</button>
+            </td>
+          </tr>
+        </tbody>
+      </ng-container>
+      <ng-container *ngIf="error">
+        <h1>Erro!</h1>
+        <button>Recarregar</button>
+      </ng-container>
     </table>
   </div>
 </div>
