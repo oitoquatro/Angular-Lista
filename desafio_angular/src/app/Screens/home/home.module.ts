@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { ComponentsModule } from 'src/app/Components/components.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,6 +13,7 @@ import { ComponentsModule } from 'src/app/Components/components.module';
     CommonModule,
     HomeRoutingModule,
     ComponentsModule,
+    ReactiveFormsModule,
   ]
 })
 export class HomeModule { }

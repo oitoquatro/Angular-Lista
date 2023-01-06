@@ -3,6 +3,7 @@ import { UsersService } from '../../Core/services/users/users.service';
 import { userData } from 'src/app/Shared/models/dataUser';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../../Components/modal/modal.component';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,11 @@ export class HomeComponent implements OnInit {
     private matDialog: MatDialog,
     private userService: UsersService
   ) { }
+
+  searchForm = new FormGroup({
+    nameStudent: new FormControl(''),
+    nationality: new FormControl(''),
+  })
 
   ngOnInit(): void {
     this.getUser();

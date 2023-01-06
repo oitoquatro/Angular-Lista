@@ -32,7 +32,7 @@ type NamePerson = {
   last: string;
 }
 
-type location = {
+type Location = {
   street:{
     number: number;
     name: string;
