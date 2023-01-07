@@ -14,6 +14,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class HomeComponent implements OnInit {
   error = false;
   dataUser: userData[] = []; // tipagem
+  filter: any = '';
+  typeFilter = '';
 
   constructor(
     private matDialog: MatDialog,
@@ -53,5 +55,10 @@ export class HomeComponent implements OnInit {
         userData: userSelected
       },
     })
+  }
+
+  searchValue (type: string){
+    this.typeFilter = type;
+    this.filter = type === 'name' ? this.searchForm.get('nameStudent')!.value : this.searchForm.get('nationality')!.value;
   }
 }

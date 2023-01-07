@@ -5,11 +5,21 @@
       <div class="filter-form">
         <div>
           <label htmlfor="nome">Pesquisar</label>
-          <input type="text" id="nome" placeholder="Nome do aluno" formControlName="nameStudent" />
+          <input
+          type="text"
+          id="nome"
+          placeholder="Nome do aluno"
+          formControlName="nameStudent"
+          (keyup)="searchValue('name')"
+          />
         </div>
         <div>
           <label htmlfor="Nacionalidade">Nacionalidade</label>
-          <select name="nacionalidade" id="nacionalidade" formControlName="nationality">
+          <select
+          name="nacionalidade"
+          id="nacionalidade"
+          formControlName="nationality"
+          (change)="searchValue('nation')">
             <option value="">Todos</option>
             <ng-container *ngFor="let nation of dataUser">
               <option [value]="nation.location.country">{{nation.location.country}}</option>
@@ -28,7 +38,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let user of dataUser">
+          <tr *ngFor="let user of (dataUser) | arrayFiltro : filter : typeFilter">
             <td>{{user.name.first}} {{user.name.last}}</td>
             <td>{{user.gender}}</td>
             <td>{{user.location.country}}</td>

@@ -4,11 +4,14 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { ComponentsModule } from 'src/app/Components/components.module';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { ArrayFiltroPipe } from '../../pipes/array-filtro-pipe';
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [
+    HomeComponent,
+    ArrayFiltroPipe,
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,
